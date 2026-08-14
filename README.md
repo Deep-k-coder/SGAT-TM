@@ -1,62 +1,118 @@
-# SGAT-TM
-Stacked Graph Attention Network with Temporal Modeling for lncRNA-miRNA Association Network
+# 🧬 SGAT-TM
 
-## Project Overview
-The project involves the development and application of SGAT-TM to extract and analyze features from Long Non-Coding RNAs (lncRNAs) and micro RNAs (miRNAs). The objective is to train and test machine learning models using biological features to understand lncRNA-miRNA behavior and their potential roles in biological processes.
-## Publication
-Shivani Saxena, Ahsan Z Rizvi, Stacked graph attention network with temporal modeling for lncRNA-miRNA association network, 
-  _IEEE/ACM Transactions on Computational Biology and Bioinformatics_, 2025, doi:10.1109/TCBBIO.2025.3587877
+**Stacked Graph Attention Network with Temporal Modeling for lncRNA-miRNA Association Network**
 
-## Data Description
-The dataset used in this project is stored in a data directory and includes lncRNA and miRNA feautures for training and testing. These datasets contain arrays where each sample corresponds to different features. 
+## 📌 Overview
 
-## Code Description
-The code used in this project is stored in a code directory and includes:
-* main.py: Entry point to train and evaluate the SGAT-TM model with customizable hyperparameters.
-* model.py: Defines the SGAT-TM architecture combining self-attention, graph attention layers, GRU cell and MLP module.
-* dataset.py: Loads .pkl data and prepares it for PyTorch models.
-* funcs.py: Functions for metrics calculation and optional visualizations.
+SGAT-TM is a graph-based deep learning approach for modeling **lncRNA-miRNA associations** from biological feature data. The architecture combines attention-based graph representation learning with temporal modeling to learn useful representations for association prediction.
 
-## File Structure
-The file structure of the repository is as follows:
-```.
+## 🎯 Objectives
+
+- Learn representations of lncRNA and miRNA features.
+- Model relationships using graph attention mechanisms.
+- Capture temporal information with GRU-based modeling.
+- Train and evaluate the SGAT-TM architecture for association prediction.
+
+## 🧠 Model Workflow
+
+```text
+Biological Features
+        ↓
+Data Loading & Preprocessing
+        ↓
+Feature Representation
+        ↓
+Self / Graph Attention
+        ↓
+Temporal Modeling (GRU)
+        ↓
+MLP / Prediction Module
+        ↓
+Association Prediction
+```
+
+## 🛠️ Tech Stack
+
+- Python
+- PyTorch
+- PyTorch Geometric
+- NumPy
+- Pandas
+- Scikit-learn
+- Matplotlib
+
+## 📂 Repository Structure
+
+```text
+SGAT-TM/
 ├── data/
-│   ├── lncRNA_feature.pkl   # Pickle file containing all lncRNA features
-│   ├── miRNA_feature.pkl    # Pickle file containing all miRNA features
-│   ├── lncRNA_idx.csv       # CSV file with all lncRNA names
-│   ├── miRNA_idx.csv        # CSV file with all miRNA names
-│   └── splits.pkl           # Pickle file containing train/test split data
+│   ├── lncRNA_feature.pkl
+│   ├── miRNA_feature.pkl
+│   ├── lncRNA_idx.csv
+│   ├── miRNA_idx.csv
+│   └── splits.pkl
+│
 ├── code/
-│   ├── model.py             # SGAT-TM model architecture
-│   ├── dataset.py           # Data loading and preprocessing
-│   ├── funcs.py             # Metric and utility functions
-│   ├── main.py              # Training and evaluation script
-│   └── layer.py             # Custom layers for the model
-├── README.md                # Project overview and instructions
-└── requirements.txt         # Python dependencies
+│   ├── main.py       # Training and evaluation entry point
+│   ├── model.py      # SGAT-TM model architecture
+│   ├── layer.py      # Custom model layers
+│   ├── dataset.py    # Data loading and preparation
+│   └── funcs.py      # Metrics and utility functions
+│
+├── requirements.txt
+└── README.md
 ```
 
-## Installation
-1. Prerequisites
-Make sure you have following libraries installed.
-* matplotlib==3.10.1
-* numpy==2.2.5
-* pandas==2.2.3
-* scikit_learn==1.6.1
-* torch==2.4.1
-* torch_geometric==2.6.1
-* torch_sparse==0.6.18+pt24cu121
+## ⚙️ Installation
 
-You can install the dependencies by running:
 ```bash
-pip3 install -r requirements.txt
+git clone https://github.com/Deep-k-coder/SGAT-TM.git
+cd SGAT-TM
+pip install -r requirements.txt
 ```
-2. Run
 
-To train the model, run the main.py script. You can customize training parameters such as the number of epochs, learning rate, and other hyperparameters by passing arguments to the script.
+> Some PyTorch Geometric dependencies can be environment/CUDA-version specific. Follow the versions in `requirements.txt` for the intended environment.
+
+## ▶️ Training
 
 ```bash
 python3 code/main.py --epoch XXXX --lr XXXX
 ```
-## Contact
-Dr Ahsan Z Rizvi, ahsan.rizvi@iar.ac.in
+
+Replace `XXXX` with the desired experiment values.
+
+## 📊 Evaluation
+
+The project includes utility functions for calculating evaluation metrics and optional visualizations. Add experiment-specific results and plots when publishing reproducible experiments.
+
+## 📚 Publication
+
+Shivani Saxena, Ahsan Z. Rizvi, **"Stacked graph attention network with temporal modeling for lncRNA-miRNA association network,"** *IEEE/ACM Transactions on Computational Biology and Bioinformatics*, 2025.
+
+DOI: `10.1109/TCBBIO.2025.3587877`
+
+## 🔬 Research Area
+
+```text
+Artificial Intelligence
+        ↓
+Deep Learning
+        ↓
+Graph Neural Networks
+        ↓
+Graph Attention Networks
+        ↓
+Computational Biology
+        ↓
+lncRNA-miRNA Association Prediction
+```
+
+## 👨‍💻 Repository
+
+Maintained by **Deep Koshiya** as part of an AI/ML and computational-biology project workflow.
+
+GitHub: https://github.com/Deep-k-coder
+
+## 📄 License
+
+Please refer to the original project/publication terms and dataset licensing before redistributing research data or code.
