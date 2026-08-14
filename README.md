@@ -1,35 +1,48 @@
 # 🧬 SGAT-TM
 
-**Stacked Graph Attention Network with Temporal Modeling for lncRNA-miRNA Association Network**
+> **Stacked Graph Attention Network with Temporal Modeling for lncRNA-miRNA Association Network**
+
+A graph-based deep-learning project for modeling **lncRNA-miRNA associations** using graph attention and temporal representation learning.
 
 ## 📌 Overview
 
-SGAT-TM is a graph-based deep learning approach for modeling **lncRNA-miRNA associations** from biological feature data. The architecture combines attention-based graph representation learning with temporal modeling to learn useful representations for association prediction.
+SGAT-TM combines graph-based representation learning with temporal modeling to learn useful representations of biological entities and support association prediction.
+
+The repository contains the project code, data layout, dependency configuration, and documentation needed to understand the research workflow.
+
+## 🧠 Architecture
+
+```text
+Biological Feature Data
+          ↓
+Data Loading & Preprocessing
+          ↓
+Feature Representation
+          ↓
+Graph / Self Attention
+          ↓
+Temporal Modeling (GRU)
+          ↓
+Prediction Module
+          ↓
+lncRNA-miRNA Association Prediction
+```
+
+### Core Components
+
+| Component | Role |
+|---|---|
+| Feature representation | Encodes biological feature information |
+| Graph attention | Learns relationship-aware representations |
+| GRU temporal modeling | Models sequential / temporal information |
+| Prediction module | Produces association predictions |
 
 ## 🎯 Objectives
 
-- Learn representations of lncRNA and miRNA features.
-- Model relationships using graph attention mechanisms.
-- Capture temporal information with GRU-based modeling.
-- Train and evaluate the SGAT-TM architecture for association prediction.
-
-## 🧠 Model Workflow
-
-```text
-Biological Features
-        ↓
-Data Loading & Preprocessing
-        ↓
-Feature Representation
-        ↓
-Self / Graph Attention
-        ↓
-Temporal Modeling (GRU)
-        ↓
-MLP / Prediction Module
-        ↓
-Association Prediction
-```
+- Learn meaningful representations for lncRNA and miRNA features.
+- Model biological relationships using attention-based graph learning.
+- Capture temporal information using GRU-based modeling.
+- Provide a reproducible workflow for association prediction experiments.
 
 ## 🛠️ Tech Stack
 
@@ -53,11 +66,11 @@ SGAT-TM/
 │   └── splits.pkl
 │
 ├── code/
-│   ├── main.py       # Training and evaluation entry point
-│   ├── model.py      # SGAT-TM model architecture
-│   ├── layer.py      # Custom model layers
-│   ├── dataset.py    # Data loading and preparation
-│   └── funcs.py      # Metrics and utility functions
+│   ├── main.py       # Training / evaluation entry point
+│   ├── model.py      # Model architecture
+│   ├── layer.py      # Custom layers
+│   ├── dataset.py    # Dataset preparation
+│   └── funcs.py      # Metrics / utilities
 │
 ├── requirements.txt
 └── README.md
@@ -71,25 +84,23 @@ cd SGAT-TM
 pip install -r requirements.txt
 ```
 
-> Some PyTorch Geometric dependencies can be environment/CUDA-version specific. Follow the versions in `requirements.txt` for the intended environment.
+PyTorch Geometric installations can depend on the local Python/PyTorch/CUDA environment. Use the versions specified by the repository configuration where applicable.
 
-## ▶️ Training
+## ▶️ Running the Project
+
+The repository's training entry point is `code/main.py`.
 
 ```bash
-python3 code/main.py --epoch XXXX --lr XXXX
+python3 code/main.py --epoch YOUR_EPOCHS --lr YOUR_LEARNING_RATE
 ```
 
-Replace `XXXX` with the desired experiment values.
+Replace the placeholders with the experiment configuration you want to run.
 
-## 📊 Evaluation
+## 📊 Evaluation & Results
 
-The project includes utility functions for calculating evaluation metrics and optional visualizations. Add experiment-specific results and plots when publishing reproducible experiments.
+The project includes utility functions for evaluation and visualization. Experiment-specific scores, plots, and comparisons should be added here when publishing reproducible runs.
 
-## 📚 Publication
-
-Shivani Saxena, Ahsan Z. Rizvi, **"Stacked graph attention network with temporal modeling for lncRNA-miRNA association network,"** *IEEE/ACM Transactions on Computational Biology and Bioinformatics*, 2025.
-
-DOI: `10.1109/TCBBIO.2025.3587877`
+> **No performance numbers are claimed in this README unless they are directly supported by committed experiment results.**
 
 ## 🔬 Research Area
 
@@ -100,19 +111,30 @@ Deep Learning
         ↓
 Graph Neural Networks
         ↓
-Graph Attention Networks
+Graph Attention
+        ↓
+Temporal Modeling
         ↓
 Computational Biology
         ↓
 lncRNA-miRNA Association Prediction
 ```
 
-## 👨‍💻 Repository
+## 📚 Publication
 
-Maintained by **Deep Koshiya** as part of an AI/ML and computational-biology project workflow.
+Shivani Saxena, Ahsan Z. Rizvi, **"Stacked graph attention network with temporal modeling for lncRNA-miRNA association network,"** *IEEE/ACM Transactions on Computational Biology and Bioinformatics*, 2025.
 
-GitHub: https://github.com/Deep-k-coder
+**DOI:** `10.1109/TCBBIO.2025.3587877`
 
-## 📄 License
+## 👨‍💻 Author
 
-Please refer to the original project/publication terms and dataset licensing before redistributing research data or code.
+**Deep Koshiya**  
+AI & ML Developer • Python Developer • Computer Vision • Deep Learning
+
+- GitHub: https://github.com/Deep-k-coder
+- LinkedIn: https://www.linkedin.com/in/deepkoshiya/
+- Portfolio: https://deep-about.netlify.app
+
+## 📄 License & Data
+
+Refer to the original project, publication, dataset, and repository terms before redistributing research code or data.
